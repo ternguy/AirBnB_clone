@@ -1,6 +1,29 @@
-The AirBnB Clone Project
-AirBnB Logo
+# AirBnB clone - The console
+<table>
+ <thead>
+  <tr>
+   <th style="align-text: left">Consept</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td>
+For this project, we expect you to look at these concepts:
 
+Python packages
+AirBnB clone
+   </td>
+  </tr>
+ </tbody>
+</table>
+
+<table>
+ <tr>
+  <td>
+![video](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20221121%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221121T065906Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=cb7784230a32b4b7199e0775a54de2750988e1a9f330f8b8f4b573a5aa3c0cb6)
+  </td>
+ </tr>
+</table>
 Project Description
 This is the first part of the AirBnB clone project where we worked on the backend of the project whiles interfacing it with a console application with the help of the cmd module in python.
 
