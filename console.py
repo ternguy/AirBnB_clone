@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
         elif "{}.{}".format(argl[0], argl[1]) not in objdict:
             print("** no instance found **")
         else:
-            print(objdict["{}.{}".format(argl[0], argl[1])]
+            print(objdict["{}.{}".format(argl[0], argl[1])])
 
     def do_destroy(self, arg):
         """ Delete the class intance of a cetain id """
