@@ -7,7 +7,7 @@ from models import storage
 from shlex import split
 from models.base_model import BaseModel
 from models.user import User
-from modesls.place import Place
+from models.place import Place
 from models.state import State
 from models.city import City
 from models.review import Review

@@ -2,6 +2,7 @@
 """
 Sub_class
 """
+from models.base_model import BaseModel
 
 class Place(BaseModel):
     """ Inform the place (location) """
