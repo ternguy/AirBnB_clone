@@ -6,6 +6,7 @@ import re
 from models import storage
 from shlex import split
 from models.base_model import BaseModel
+from models.user import User
 
 def parse(arg):
     """ Create the parce method """
@@ -29,7 +30,7 @@ class HBNBCommand(cmd.Cmd):
     """ The class airbnb command line interpreter """
 
     prompt = "(hbnb) "
-    __classes = {"BaseModel"}
+    __classes = {"BaseModel", "User"}
 
     def do_quit(self, arg):
         """ Exit the program """
@@ -46,6 +47,27 @@ class HBNBCommand(cmd.Cmd):
         """ When the empty line is entered """
         
         pass
+
+    def default(self, arg):
+        """Default behavior for cmd module when input is invalid"""
+        argdict = {
+            "all": self.do_all,
+            "show": self.do_show,
+            "destroy": self.do_destroy,
+            "update": self.do_update
+        }
+        match = re.search(r"\.", arg)
+        if match is not None:
+            argl = [arg[:match.span()[0]], arg[match.span()[1]:]]
+            match = re.search(r"\((.*?)\)", argl[1])
+            if match is not None:
+                command = [argl[1][:match.span()[0]], match.group()[1:-1]]
+                if command[0] in argdict.keys():
+                    call = "{} {}".format(argl[0], command[1])
+                    return argdict[command[0]](call)
+        print("*** Unknown syntax: {}".format(arg))
+        return False
+
     def do_create(self, line):
         """ Create a new instance of the BaseModel and print the id
         if the class name is missing, print that it is missing

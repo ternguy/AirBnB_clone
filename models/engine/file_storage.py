@@ -2,6 +2,7 @@
 """ The json file storage """
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 class FileStorage():
     """ Create a file storage
@@ -21,7 +22,7 @@ class FileStorage():
 
     __file_path = "file.json"
     __objects = {}
-    class_dict = {"my_model": BaseModel}
+    class_dict = {"BaseModel": BaseModel, "User": User}
     
     def all(self):
         """ return the dictionary objects """
@@ -37,12 +38,13 @@ class FileStorage():
         """ Serialize __objects to the JSON file
         path: __file_path
         """
+
         obj_dict = {}
 
         for key, obj in self.__objects.items():
             obj_dict[key] = obj.to_dict()
         with open(self.__file_path, 'w', encoding='utf-8') as f:
-            json.dump(obj.to_dict, f)
+            json.dump(obj_dict, f)
 
     def reload(self):
         """ Deserializes the JSON file to __objects 
@@ -50,7 +52,7 @@ class FileStorage():
         """
         try:
             with open(self.__file_path, 'r', encoding='utf-8') as f:
-                new_obj_dict = json(f)
+                new_obj_dict = json.load(f)
             for key, value in new_obj_dict.items():
                 obj = self.class_dict[value['__class__']](**value)
                 self.__objects[key] = obj
