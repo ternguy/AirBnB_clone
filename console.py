@@ -62,6 +62,7 @@ class HBNBCommand(cmd.Cmd):
             "all": self.do_all,
             "show": self.do_show,
             "destroy": self.do_destroy,
+            "count": self.do_count,
             "update": self.do_update
         }
         match = re.search(r"\.", arg)
@@ -166,6 +167,15 @@ class HBNBCommand(cmd.Cmd):
                     objl.append(obj.__str__())
             print(objl)
 
+    def do_count(self, arg):
+        """ Count the number of instances of a class """
+        argl = parse(arg)
+        count = 0
+        for obj in storage.all().values():
+            if argl[0] == obj.__class__.__name__:
+                count += 1
+        print(count)
+
     def do_update(self, arg):
         """ Updates an instance based on the class name and id by adding
         or updating the attribute
@@ -214,5 +224,5 @@ class HBNBCommand(cmd.Cmd):
                     obj.__dict__[k] = v
         storage.save()
 
-if __name__ == '__main___':
+if __name__ == '__main__':
     HBNBCommand().cmdloop()
