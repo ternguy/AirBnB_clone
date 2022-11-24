@@ -7,6 +7,11 @@ from models import storage
 from shlex import split
 from models.base_model import BaseModel
 from models.user import User
+from modesls.place import Place
+from models.state import State
+from models.city import City
+from models.review import Review
+from models.amenity import Amenity
 
 def parse(arg):
     """ Create the parce method """
@@ -30,7 +35,10 @@ class HBNBCommand(cmd.Cmd):
     """ The class airbnb command line interpreter """
 
     prompt = "(hbnb) "
-    __classes = {"BaseModel", "User"}
+    __classes = {"BaseModel", "User",
+            "Place", "State",
+            "City", "Review",
+            "Amenity"}
 
     def do_quit(self, arg):
         """ Exit the program """
