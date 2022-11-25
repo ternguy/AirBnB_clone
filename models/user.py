@@ -1,12 +1,5 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
-"""this model create a user class"""
-from models.base_model import BaseModels
-
-
-class User(BaseModel):
-    """ class for managing user objects"""
-=======
+from models.base_model import BaseModel
 """
 sub_class model
 """
@@ -22,7 +15,6 @@ class User(BaseModel):
         first_name(string): empty string
         last_name(string): empty string
     """
->>>>>>> a956671c71f8783740e5109d207df2d71b62226a
 
     email = ""
     password = ""
