@@ -8,5 +8,5 @@ class Review(BaseModel):
     """ Show some review attributes """
 
     place_id = ""
-    user_id
+    user_id = ""
     text = ""
