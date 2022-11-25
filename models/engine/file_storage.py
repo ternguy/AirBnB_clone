@@ -9,11 +9,12 @@ from models.place import Place
 from models.review import Review
 from models.amenity import Amenity
 
+
 class FileStorage():
     """ Create a file storage
-    - serialize to JSON file and deserialize 
+    - serialize to JSON file and deserialize
     JSON file to instances
-    
+
     Args:
         class attributtes:
             __file_path: string json ti file (file.json)
@@ -27,11 +28,14 @@ class FileStorage():
 
     __file_path = "file.json"
     __objects = {}
-    class_dict = {"BaseModel": BaseModel, "User": User,
-            "State": State, "City": City,
-            "Place": Place, "Amenity": Amenity,
-            "Review": Review}
-    
+    class_dict = {"BaseModel": BaseModel,
+                  "User": User,
+                  "State": State,
+                  "City": City,
+                  "Place": Place,
+                  "Amenity": Amenity,
+                  "Review": Review}
+
     def all(self):
         """ return the dictionary objects """
         return (self.__objects)
@@ -55,7 +59,7 @@ class FileStorage():
             json.dump(obj_dict, f)
 
     def reload(self):
-        """ Deserializes the JSON file to __objects 
+        """ Deserializes the JSON file to __objects
             if the file doesn't exist: show no errors
         """
         try:

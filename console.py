@@ -13,6 +13,7 @@ from models.city import City
 from models.review import Review
 from models.amenity import Amenity
 
+
 def parse(arg):
     """ Create the parce method """
     guilemets = re.search(r"\{(.*?)\}", arg)
@@ -31,14 +32,18 @@ def parse(arg):
         retl.append(guilemets.group())
         return retl
 
+
 class HBNBCommand(cmd.Cmd):
     """ The class airbnb command line interpreter """
 
     prompt = "(hbnb) "
-    __classes = {"BaseModel", "User",
-            "Place", "State",
-            "City", "Review",
-            "Amenity"}
+    __classes = {"BaseModel",
+                 "User",
+                 "Place",
+                 "State",
+                 "City",
+                 "Review",
+                 "Amenity"}
 
     def do_quit(self, arg):
         """ Exit the program """
@@ -50,10 +55,10 @@ class HBNBCommand(cmd.Cmd):
 
         print("")
         return True
-    
+
     def emptyline(self):
         """ When the empty line is entered """
-        
+
         pass
 
     def default(self, arg):
@@ -114,9 +119,9 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
-        """ Showthe string representation of an instance based on the class name
-        Ex:
-            '$ show BaseModel 1234-1234-1234'
+        """ Showthe string representation of an
+        instance based on the class name
+        Ex: '$ show BaseModel 1234-1234-1234'
         """
 
         argl = parse(arg)
@@ -223,6 +228,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     obj.__dict__[k] = v
         storage.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

@@ -4,6 +4,7 @@ Sub_class of the BaseModel class
 """
 from models.base_model import BaseModel
 
+
 class Place(BaseModel):
     """ declare some attributes selated to place """
 

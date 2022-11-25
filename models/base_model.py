@@ -23,10 +23,10 @@ class BaseModel:
             for key, value in kwargs.items():
                 if "created_at" == key:
                     self.created_at = datetime.strptime(kwargs["created_at"],
-                                            date_format)
+                                                        date_format)
                 elif "updated_at" == key:
                     self.updated_at = datetime.strptime(kwargs["updated_at"],
-                                            date_format)
+                                                        date_format)
                 elif "__class__" == key:
                     pass
                 else:
@@ -42,11 +42,11 @@ class BaseModel:
         """Returns official string representation"""
 
         return ("[{}] ({}) {}".
-            format(self.__class__.__name__, self.id, self.__dict__))
+                format(self.__class__.__name__, self.id, self.__dict__))
 
     def __repr__(self):
         """ make a representation copy of the __str__ """
-        
+
         return (self.__str__())
 
     def save(self):

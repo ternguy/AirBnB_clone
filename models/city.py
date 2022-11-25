@@ -4,6 +4,7 @@ Sub_class City of class BaseModel
 """
 from models.base_model import BaseModel
 
+
 class City(BaseModel):
     """ the city name and id """
 
