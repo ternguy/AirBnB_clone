@@ -107,13 +107,11 @@ EOF  all  count  create  destroy  help  quit  show  update
         self.assertEqual(s, f.getvalue())
 
     """
-    def test_help_count(self):
-        """Tests the help command."""
-        with patch('sys.stdout', new=StringIO()) as f:
-            HBNBCommand().onecmd("help count")
-        s = ' Count the number of instances of a class \n'
-        'Only if there exist'
-        self.assertEqual(s, f.getvalue())
+
+    def test_empty_line(self):
+        with patch("sys.stdout", new=StringIO()) as output:
+            self.assertFalse(HBNBCommand().onecmd(""))
+            self.assertEqual("", output.getvalue().strip())
 
     """
     def test_help_update(self):
