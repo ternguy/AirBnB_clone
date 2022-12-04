@@ -1,0 +1,51 @@
+.locations, .amenities {
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+.locations h3,
+.amenities h3 {
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 30px;
+}
+.locations h4,
+.amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 30px;
+    text-align: left;
+}
+/* Displaying the locations and amenities when they are hovered  */
+.popover {
+    display: none;
+    background-color: #FAFAFA;
+    border: #DDDDDD solid 1px;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+}
+
+.popover h2 {
+    font-size: 16px;
+}
+
+li {
+    list-style-type: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* showing the locations and amenities on hover */
+.locations:hover .popover,
+.amenities:hover .popover {
+    display: block;
+}
