@@ -1,0 +1,127 @@
+.places {
+    text-align: center;
+}
+.places h1 {
+    text-align: left;
+    font-size: 30px;
+}
+article {
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border: #FF5A5F solid 1px;
+    border-radius: 4px;
+    display: inline-block;
+}
+article h2 {
+    font-size: 30px;
+    text-align: center;
+}
+div.price_by_night {
+    color: #FF5A5F;
+    border: #FF5A5F solid 4px;
+    border-radius: 100%;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    align-content: right;
+    margin-right: 30px;
+    float: right;
+    top: -80px;
+    position: relative;
+}
+div.information {
+    height: 80px;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    text-align: center;
+}
+.max_guest {
+    background-image: url(../images/icon_group.png);
+}
+.number_rooms {
+    background-image: url(../images/icon_bed.png);
+}
+.number_bathrooms {
+    background-image: url(../images/icon_bath.png);
+}
+div.max_guest,
+div.number_rooms,
+div.number_bathrooms {
+    display: inline-block;
+    line-height: 140px;
+    width: 90px;
+    height: 100%;
+    background-position: 50% 5px;
+    background-repeat: no-repeat;
+}
+div.user,
+div.description {
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+footer {
+    position: relative;
+}
+/* Amenities filter */
+.places article .amenities,
+.places article .reviews{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+	margin: 40px 0 40px;
+	width: 100%;
+	padding: 0;
+}
+.places article .amenities h2,
+.places article .reviews h2 {
+	size: 16px;	
+	border-bottom: 1px solid #DDDDDD;
+    justify-content: flex-start;
+}
+.places article .amenities ul,
+.places article .reviews ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+ .places article .amenities ul li,
+.places article .amenities ul li{
+  /* height: 40px; */
+	line-height: 30px;
+	padding-left: 50px;
+}
+.places article .amenities ul li,
+.places article .reviews ul li{
+	background-position: top left;
+  background-size: 30px;
+	background-repeat: no-repeat;
+	list-style-type: none;
+}
+
+.places article .reviews ul li h3{
+	font-size: 14px;
+}
+.places article .reviews ul li p{
+	font-size: 12px;
+}
+.icon_wifi{
+	background-image: url("../images/icon_wifi.png");
+  
+}
+.icon_tv{
+	background-image: url("../images/icon_tv.png");
+  
+}
+.icon_pets{
+	background-image: url("../images/icon_pets.png");
+  
+}
+
+footer {
+   position: relative;
+ }
